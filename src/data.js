@@ -1,4 +1,4 @@
-export const questionnaire_title = "台灣藥師、藥學生對健康偏頗資訊之行為探討";
+export const questionnaire_title = "台灣藥師、藥學生應對健康偏頗資訊之行為探討";
 export const questionnaire_intro = `
 各位藥師、同學們，您好，
 此問卷目的在於了解台灣藥師面對病人提及健康偏頗或有誤資訊時的應對行為，並探討相關因素之影響。
