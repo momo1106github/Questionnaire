@@ -36,7 +36,7 @@ function App() {
   const [counter, setCounter] = useState();
   const [formValues, setFormValues] = useState({});
 
-  const [page, setPage] = useState(12);
+  const [page, setPage] = useState(1);
   const [endPage, setEndPage] = useState(12);
 
   const [timestamp, setTimestamp] = useState();
