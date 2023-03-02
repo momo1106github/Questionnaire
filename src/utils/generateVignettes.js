@@ -2,7 +2,7 @@ import { createObjectCsvWriter } from "csv-writer";
 import fs from "fs";
 
 const ages = [25, 45, 70];
-const mention_methods = ["在對話過程中提到", "向你詢問問題"];
+const mention_methods = ["在對話過程中提到", "向你詢問"];
 const message_types = [
   "維他命 D 會造成阿茲海默症，為了避免失智，要減少攝取維他命 D",
   "乙醯半胱胺酸(N-acetylcysteine)可以抑制新型冠狀病毒，照三餐吃可以殺死病毒且康復得更快",
@@ -26,7 +26,7 @@ ages.forEach((age) => {
         patient_thoughts.forEach((patient_thought) => {
           time_limits.forEach((time_limit) => {
             vignettes.push(
-              `你現在正在與一位 ${age} 歲的民眾對話，這位民眾${mention_method}提到一個健康偏頗資訊：「${message_type}」在後續的對談中，你發現此民眾${patient_thought}，且評估完此病人的健康狀況後，你預期這項資訊${expected_impact}該病人的健康，而目前你${time_limit}。`
+              `你現在正在與一位 ${age} 歲的民眾對話，這位民眾${mention_method}一個健康偏頗資訊：「${message_type}」在後續的對談中，你發現此民眾${patient_thought}，且評估完此病人的健康狀況後，你預期這項資訊${expected_impact}該病人的健康，而目前你${time_limit}。`
             );
           });
         });

@@ -10,18 +10,28 @@ export default function NormalPart({
   startIndex,
   handleInputChange,
 }) {
+  const sub_questions_len = [];
+  for (let i in questions) {
+    sub_questions_len.push(
+      questions[i].sub_questions ? questions[i].sub_questions.length : 1
+    );
+  }
+
   return (
-    <Paper style={{ margin: "25px", padding: "10px" }}>
-      <Title title={title} intro={intro} style={{ fontWeight:  "bold" }}/>
+    <>
+      <Title title={title} intro={intro} style={{ fontWeight: "bold" }} />
       {questions.map((question, i) => (
         <NormalQuestion
           key={i}
           question={question}
           formValues={formValues}
-          index={startIndex + i}
+          index={
+            startIndex +
+            sub_questions_len.slice(0, i).reduce((a, b) => a + b, 0)
+          }
           handleInputChange={handleInputChange}
         />
       ))}
-    </Paper>
+    </>
   );
 }

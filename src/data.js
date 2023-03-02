@@ -2,9 +2,7 @@ export const questionnaire_title = "台灣藥師、藥學生應對健康偏頗�
 export const questionnaire_intro = `
 各位藥師、同學們，您好，
 此問卷目的在於了解台灣藥師面對病人提及健康偏頗或有誤資訊時的應對行為，並探討相關因素之影響。
-我們非常誠摯地邀請您填寫問卷，整份問卷約需花費您 10 分鐘的時間。本研究已通過臺北醫學大學暨附屬醫院聯合人體研究倫理委
-員會核准，您的資料將視為機密且身分將被保密，若您在研究過程中有任何對本研究之疑慮，可隨時要求修正、刪除資料，亦可選擇
-退出研究，感謝您的協助。
+我們非常誠摯地邀請您填寫問卷，整份問卷約需花費您 10 分鐘的時間。本研究已通過臺北醫學大學暨附屬醫院聯合人體研究倫理委員會核准，您的資料將視為機密且身分將被保密，若您在研究過程中有任何對本研究之疑慮，可隨時要求修正、刪除資料，亦可選擇退出研究，感謝您的協助。
 問卷填寫完成後，請留下 Email，填寫順序為前 200 名者，經研究人員確認為有效問卷後，我們將寄送星巴克星享飲料券一份。
 
 臺北醫學大學藥學系碩士班
@@ -137,47 +135,52 @@ export const col_names = [
   "Part4_6",
   "Part4_7",
   "Part4_8",
-  "Part4_9",
   "Part5_1",
   "Part5_2",
   "Part5_3",
   "Part5_4",
   "Part5_5",
-  "Part4_6",
-  "Part6_scenario1_1",
-  "Part6_scenario1_2",
-  "Part6_scenario1_3",
-  "Part6_scenario1_4",
-  "Part6_scenario1_5",
-  "Part6_scenario2_1",
-  "Part6_scenario2_2",
-  "Part6_scenario2_3",
-  "Part6_scenario2_4",
-  "Part6_scenario2_5",
-  "Part6_scenario3_1",
-  "Part6_scenario3_2",
-  "Part6_scenario3_3",
-  "Part6_scenario3_4",
-  "Part6_scenario3_5",
-  "Part6_scenario4_1",
-  "Part6_scenario4_2",
-  "Part6_scenario4_3",
-  "Part6_scenario4_4",
-  "Part6_scenario4_5",
-  "Part6_scenario5_1",
-  "Part6_scenario5_2",
-  "Part6_scenario5_3",
-  "Part6_scenario5_4",
-  "Part6_scenario5_5",
+  "Part5_6",
+  "Part6_S1",
+  "Part6_S1_1",
+  "Part6_S1_2",
+  "Part6_S1_3",
+  "Part6_S1_4",
+  "Part6_S1_5",
+  "Part6_S2",
+  "Part6_S2_1",
+  "Part6_S2_2",
+  "Part6_S2_3",
+  "Part6_S2_4",
+  "Part6_S2_5",
+  "Part6_S3",
+  "Part6_S3_1",
+  "Part6_S3_2",
+  "Part6_S3_3",
+  "Part6_S3_4",
+  "Part6_S3_5",
+  "Part6_S4",
+  "Part6_S4_1",
+  "Part6_S4_2",
+  "Part6_S4_3",
+  "Part6_S4_4",
+  "Part6_S4_5",
+  "Part6_S5",
+  "Part6_S5_1",
+  "Part6_S5_2",
+  "Part6_S5_3",
+  "Part6_S5_4",
+  "Part6_S5_5",
 ];
 
 export const num_part1 = 8;
 export const part1_questions = [
   {
-    description: "1. 我認為與病人釐清偏頗或有誤的健康資訊：",
+    description:
+      "1. 我認為與病人釐清偏頗或有誤的健康資訊：請勾選最符合您想法的敘述",
     sub_questions: [
       {
-        text: "(1) 簡單程度",
+        text: "(1)",
         options: [
           { value: "非常簡單", label: "非常簡單" },
           { value: "簡單", label: "簡單" },
@@ -187,7 +190,7 @@ export const part1_questions = [
         ],
       },
       {
-        text: "(2) 意義程度",
+        text: "(2)",
         options: [
           { value: "非常有意義", label: "非常有意義" },
           { value: "有意義", label: "有意義" },
@@ -197,7 +200,7 @@ export const part1_questions = [
         ],
       },
       {
-        text: "(3) 有趣程度",
+        text: "(3)",
         options: [
           { value: "非常有趣", label: "非常有趣" },
           { value: "有趣", label: "有趣" },
@@ -207,7 +210,7 @@ export const part1_questions = [
         ],
       },
       {
-        text: "(4) 愉快程度",
+        text: "(4)",
         options: [
           { value: "非常愉快", label: "非常愉快" },
           { value: "愉快", label: "愉快" },
@@ -219,10 +222,11 @@ export const part1_questions = [
     ],
   },
   {
-    description: "2. 我認為在社群媒體或公開場合釐清偏頗或有誤的健康資訊：",
+    description:
+      "2. 我認為在社群媒體或公開場合釐清偏頗或有誤的健康資訊：請勾選最符合您想法的敘述",
     sub_questions: [
       {
-        text: "(1) 簡單程度",
+        text: "(1)",
         options: [
           { value: "非常簡單", label: "非常簡單" },
           { value: "簡單", label: "簡單" },
@@ -232,7 +236,7 @@ export const part1_questions = [
         ],
       },
       {
-        text: "(2) 意義程度",
+        text: "(2)",
         options: [
           { value: "非常有意義", label: "非常有意義" },
           { value: "有意義", label: "有意義" },
@@ -242,7 +246,7 @@ export const part1_questions = [
         ],
       },
       {
-        text: "(3) 有趣程度",
+        text: "(3)",
         options: [
           { value: "非常有趣", label: "非常有趣" },
           { value: "有趣", label: "有趣" },
@@ -252,7 +256,7 @@ export const part1_questions = [
         ],
       },
       {
-        text: "(4) 愉快程度",
+        text: "(4)",
         options: [
           { value: "非常愉快", label: "非常愉快" },
           { value: "愉快", label: "愉快" },
@@ -457,7 +461,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "8. 成為醫藥專業領域的一員對我來說很重要。",
+        text: "8. 身為醫藥專業領域的一員對我來說很重要。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -575,7 +579,7 @@ export const part5_questions = [
     description: "",
     sub_questions: [
       {
-        text: "1. 我經常遇過病人提及的健康偏頗資訊或有誤資訊。",
+        text: "1. 我經常遇到病人提及的健康偏頗資訊或有誤資訊。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -729,507 +733,3 @@ export const factorial_survey_questions = [
     ],
   },
 ];
-
-// export const col_names = ["Email", "Timestamp",	"Duration",	"IP",
-// "Attitude_Q1", "Attitude_Q2", "Attitude_Q3", "Attitude_Q4", "Attitude_Q5", "Attitude_Q6", "Attitude_Q7", "Attitude_Q8", "Attitude_Q9", "Attitude_Q10",
-// "SubjectiveNorm_Q1", "SubjectiveNorm_Q2", "SubjectiveNorm_Q3", "SubjectiveNorm_Q4", "SubjectiveNorm_Q5", "SubjectiveNorm_Q6", "SubjectiveNorm_Q7", "SubjectiveNorm_Q8", "SubjectiveNorm_Q9", "SubjectiveNorm_Q10",
-// "ProfessionalIdentity_Q1", "ProfessionalIdentity_Q2", "ProfessionalIdentity_Q3", "ProfessionalIdentity_Q4", "ProfessionalIdentity_Q5", "ProfessionalIdentity_Q6", "ProfessionalIdentity_Q7", "ProfessionalIdentity_Q8", "ProfessionalIdentity_Q9",
-// "Self-efficacy_Q1", "Self-efficacy_Q2", "Self-efficacy_Q3", "Self-efficacy_Q4",	"Self-efficacy_Q5", "Self-efficacy_Q6",	"Self-efficacy_Q7",	"Self-efficacy_Q8",	"Self-efficacy_Q9",
-// "PastExperience_Q1",	"PastExperience_Q2",	"PastExperience_Q3",	"PastExperience_Q4",	"PastExperience_Q5",	"PastExperience_Q6",	"PastExperience_Q7",	"PastExperience_Q8",	"PastExperience_Q9",
-// "Vignette",	"FactorialVignette_Q1",	"FactorialVignette_Q2", "FactorialVignette_Q3",	"FactorialVignette_Q4",	"FactorialVignette_Q5"];
-
-// export const num_attitude_questions = 10;
-// export const attitude_questions = [
-//   { // 1
-//     description: "1. 我認為與病人討論健康偏頗資訊，並分享正確知識",
-//     options: [
-//       { value: "非常簡單", label: "非常簡單" },
-//       { value: "簡單", label: "簡單" },
-//       { value: "普通", label: "普通" },
-//       { value: "困難", label: "困難" },
-//       { value: "非常困難", label: "非常困難" }
-//     ]
-//   },
-//   { // 2
-//     description: "2. 我認為討論病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常有意義", label: "非常有意義" },
-//       { value: "有意義", label: "有意義" },
-//       { value: "普通", label: "普通" },
-//       { value: "無意義", label: "無意義" },
-//       { value: "非常無意義", label: "非常無意義" }
-//     ]
-//   },
-//   { // 3
-//     description: "3. 我認為應對病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常有趣", label: "非常有趣" },
-//       { value: "有趣", label: "有趣" },
-//       { value: "普通", label: "普通" },
-//       { value: "不有趣", label: "不有趣" },
-//       { value: "非常不有趣", label: "非常不有趣" }
-//     ]
-//   },
-//   { // 4
-//     description: "4. 我認為應對病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常愉快", label: "非常愉快" },
-//       { value: "愉快", label: "愉快" },
-//       { value: "普通", label: "普通" },
-//       { value: "不愉快", label: "不愉快" },
-//       { value: "非常不愉快", label: "非常不愉快" }
-//     ]
-//   },
-//   { // 5
-//     description: "5. 我認為應對病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常必要", label: "非常必要" },
-//       { value: "必要", label: "必要" },
-//       { value: "普通", label: "普通" },
-//       { value: "不必要", label: "不必要" },
-//       { value: "非常不必要", label: "非常不必要" }
-//     ]
-//   },
-//   { // 6
-//     description: "6. 我認為在社群媒體或公開場合討論健康偏頗資訊，並分享正確知識：",
-//     options: [
-//       { value: "非常簡單", label: "非常簡單" },
-//       { value: "簡單", label: "簡單" },
-//       { value: "普通", label: "普通" },
-//       { value: "困難", label: "困難" },
-//       { value: "非常困難", label: "非常困難" }
-//     ]
-//   },
-//   { // 7
-//     description: "7. 我認為在社群媒體或公開場合討論健康偏頗資訊，並分享正確知識：",
-//     options: [
-//       { value: "非常有意義", label: "非常有意義" },
-//       { value: "有意義", label: "有意義" },
-//       { value: "普通", label: "普通" },
-//       { value: "無意義", label: "無意義" },
-//       { value: "非常無意義", label: "非常無意義" }
-//     ]
-//   },
-//   { // 8
-//     description: "8. 我認為在社群媒體或公開場合討論健康偏頗資訊，並分享正確事實與知識",
-//     options: [
-//       { value: "非常有趣", label: "非常有趣" },
-//       { value: "有趣", label: "有趣" },
-//       { value: "普通", label: "普通" },
-//       { value: "不有趣", label: "不有趣" },
-//       { value: "非常不有趣", label: "非常不有趣" }
-//     ]
-//   },
-//   { // 9
-//     description: "9. 我認為在社群媒體或公開場合討論健康偏頗資訊，並分享正確事實與知識",
-//     options: [
-//       { value: "非常愉快", label: "非常愉快" },
-//       { value: "愉快", label: "愉快" },
-//       { value: "普通", label: "普通" },
-//       { value: "不愉快", label: "不愉快" },
-//       { value: "非常不愉快", label: "非常不愉快" }
-//     ]
-//   },
-//   { // 10
-//     description: "10. 我認為在社群媒體或公開場合討論健康偏頗資訊，並分享正確事實與知識",
-//     options: [
-//       { value: "非常必要", label: "非常必要" },
-//       { value: "必要", label: "必要" },
-//       { value: "普通", label: "普通" },
-//       { value: "不必要", label: "不必要" },
-//       { value: "非常不必要", label: "非常不必要" }
-//     ]
-//   },
-// ]
-
-// export const num_subjective_norm_questions = 10;
-// export const subjective_norm_questions = [
-//   { // 1
-//     description: "1. 我的親朋好友們認為我應該與病人討論(澄清、釐清)健康偏頗資訊(誤導、假消息)",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 2
-//     description: "2. 我的親朋好友們認為我應該在社群媒體或公開場合討論健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 3
-//     description: "3. 我的主管認為我應該應對病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 4
-//     description: "4. 我的主管認為我應該在社群媒體或公開場合討論健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 5
-//     description: "5. 我的同事/同學認為我應該應對病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 6
-//     description: "6. 我的同事/同學認為我應該在社群媒體或公開場合討論健康偏頗資訊之正確事實",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 7
-//     description: "7. 我的病人/客戶認為我應該應對病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 8
-//     description: "8. 我的病人/客戶認為我應該在社群媒體或公開場合討論健康偏頗資訊之正確事實",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 9
-//     description: "9. 社會大眾認為我應該應對病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 10
-//     description: "10. 社會大眾認為我應該在社群媒體或公開場合討論健康偏頗資訊之正確事實",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-// ];
-
-// export const professional_identity_intro = "Ref: Investigating the factors influencing professional identity of first-year health and social care students (Adams, 2006) (*為原版英文)"
-// export const num_professional_identity_questions = 9;
-// export const professional_identity_questions = [
-//   { // 1
-//     description: "1. 我是藥學專業(醫藥專業)的一份子\n *I feel like I am a member of this profession.",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 2
-//     description: "2. 我與藥學專業(醫藥專業)的人員有緊密的關係\n *I feel I have strong ties with members of this profession.",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 3
-//     description: "3. 我經常羞於承認自己是藥學專業(醫藥專業)的一份子(反向)\n *I am often ashamed to admit that I am studying for this profession.",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 4
-//     description: "4. 我發現我會因為身為醫療專業人員而找藉口(反向)\n *I find myself making excuses for belonging to this profession",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 5
-//     description: "5. 我會嘗試隱瞞我是醫療專業人員的角色(反向)\n *I try to hide that I am studying to be part of this profession.",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 6
-//     description: "6. 我很高興自己是醫療專業人 員\n *I am pleased to belong to this profession.",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 7
-//     description: "7. 我可以很認同醫療專業領域的成員\n *I can identify positively with members of this profession.",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 8
-//     description: "8. 成為醫療專業領域的一員對我來說很重要\n *Being a member of this profession is important to me.",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 9
-//     description: "9. 我認為我與醫療專業領域的其他成員有共同的特質\n *I feel I share characteristics with other members of the profession.",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-// ];
-
-// export const num_self_efficacy_questions = 9;
-// export const self_efficacy_intro = "部分參考: Axboe, M.K., Christensen, K.S., Kofoed, PE. et al. Development and validation of a self-efficacy questionnaire (SE-12) measuring the clinical communication skills of health care professionals. BMC Med Educ 16, 272 (2016)"
-// export const self_efficacy_questions = [
-//   { // 1
-//     description: "1. 我能夠在病人提及健康相關資訊時，判斷該資訊的真實性",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 2
-//     description: "2. 我能夠在與病人對話的過程中，發現病人潛在的健康偏頗觀念",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 3
-//     description: "3. 我能夠在病人提及健康偏頗資訊時，向病人說明該訊息有偏誤",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 4
-//     description: "4. 我能夠在病人提及健康偏頗資訊時，說明正確事實與知識",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 5
-//     description: "5. 我能夠透過對話讓病人重視健康偏頗資訊帶來的危害",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 6
-//     description: "6. 我能夠在與病人討論健康偏頗資訊時顧及對方的感受",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 7
-//     description: "7. 我能夠辨識社群媒體上散布的健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 8
-//     description: "8. 我能夠在社群媒體或公開場合討論健康偏頗資訊之正確事實",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 9
-//     description: "9. 我能夠製作文宣，提醒大眾健康偏頗資訊之正確事實",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-// ];
-
-// export const num_past_experience_questions = 9;
-// export const past_experience_questions = [
-//   { // 1
-//     description: "1. 我曾經遇過病人提及的健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 2
-//     description: "2. 我曾經和病人討論健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 3
-//     description: "3. 我曾經與同儕、同事分享自己應對病人提及之健康偏頗資訊的經驗",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 4
-//     description: "4. 我曾經在社群媒體上討論健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 5
-//     description: "5. 我曾經發現散播於社群媒體上的健康資訊有偏誤",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 6
-//     description: "6. 我曾經製作健康資訊文宣，提醒大眾現有的健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 7
-//     description: "7. 我能夠辨識社群媒體上散布的健康偏頗資訊",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 8
-//     description: "8. 我曾經在發現病人有健康偏頗觀念時，沒有做出提醒",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-//   { // 9
-//     description: "9. 我能夠製作文宣，提醒大眾健康偏頗資訊之正確事實",
-//     options: [
-//       { value: "非常同意", label: "非常同意" },
-//       { value: "同意", label: "同意" },
-//       { value: "普通", label: "普通" },
-//       { value: "不同意", label: "不同意" },
-//       { value: "非常不同意", label: "非常不同意" }
-//     ]
-//   },
-// ];
-
-// export const vignette = `你現在正在與一位 25 歲的民眾對話，
-// 這位民眾在對話過程中提到一個健康偏頗資訊：「維他命 D 會造成阿茲海默症，為了避免失智，要減少攝取維他命D。」
-// 在後續的對談中，你發現此民眾非常相信該訊息，也預期這項資訊可能影響該病人的健康，而目前你有足夠的時間。`

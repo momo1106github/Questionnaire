@@ -7,9 +7,11 @@ export default function Question({
   formValues,
   index,
   handleInputChange,
+  startAnnotation,
+  endAnnotation,
 }) {
   return (
-    <Paper style={{ margin: "25px", padding: "10px" }}>
+    <Paper style={{ margin: "10px", padding: "10px" }}>
       <Typography variant="body1" style={{ fontWeight: "bold" }}>
         {question.description}
       </Typography>
@@ -19,6 +21,8 @@ export default function Question({
         formValues={formValues}
         index={index}
         handleInputChange={handleInputChange}
+        startAnnotation={startAnnotation}
+        endAnnotation={endAnnotation}
       />
     </Paper>
   );

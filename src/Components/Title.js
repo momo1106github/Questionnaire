@@ -12,7 +12,7 @@ export default function Title({ title, intro, vignette, supplmentary }) {
         </Typography>
       )}
       {vignette && (
-        <Typography variant="h6" style={{ padding: "20px" }}>
+        <Typography variant="h6" style={{ padding: "2%" }}>
           {vignette}
         </Typography>
       )}

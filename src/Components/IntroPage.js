@@ -6,7 +6,14 @@ export default function IntroPage() {
   return (
     <>
       <Title title={questionnaire_title} />
-      <Typography variant="subtitle1" style={{ whiteSpace: "pre-line" }}>
+      <Typography
+        variant="subtitle1"
+        style={{
+          marginRight: "50px",
+          marginLeft: "50px",
+          whiteSpace: "pre-line",
+        }}
+      >
         {questionnaire_intro}
       </Typography>
     </>

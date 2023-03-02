@@ -12,7 +12,7 @@ export default function FactorialSurvey({
   handleInputChange,
 }) {
   return (
-    <Paper style={{ margin: "25px", padding: "10px" }}>
+    <>
       <Title title={title} vignette={vignette} supplmentary={intro} />
       {questions.map((question, i) => (
         <Question
@@ -21,8 +21,10 @@ export default function FactorialSurvey({
           formValues={formValues}
           index={startIndex + i}
           handleInputChange={handleInputChange}
+          startAnnotation="非常不可能"
+          endAnnotation="非常可能"
         />
       ))}
-    </Paper>
+    </>
   );
 }
