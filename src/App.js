@@ -42,11 +42,16 @@ function App() {
   const [timestamp, setTimestamp] = useState();
   const [ip, setIp] = useState();
 
+  // const [windowSize, setWindowSize] = useState([
+  //   window.innerWidth,
+  //   window.innerHeight,
+  // ]);
+
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
     setFormValues({
       ...formValues,
-      [name]: value,
+      [name === "" ? "Email" : name]: value,
     });
   };
 
@@ -144,6 +149,7 @@ function App() {
       setPage((page) => page + 1);
     }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formValues);
@@ -232,6 +238,18 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [page]);
+
+  // useEffect(() => {
+  //   const handleWindowResize = () => {
+  //     setWindowSize([window.innerWidth, window.innerHeight]);
+  //   };
+
+  //   window.addEventListener('resize', handleWindowResize);
+
+  //   return () => {
+  //     window.removeEventListener('resize', handleWindowResize);
+  //   };
+  // });
 
   return (
     <Container style={{ background: "#cfe8fc" }}>
@@ -427,7 +445,11 @@ function App() {
               setPage((page) => page - 1);
             }}
             size="large"
-            style={{ left: "45%", margin: "20px 10px", transform: "translate(-50%, -50%)" }}
+            style={{
+              left: "45%",
+              margin: "20px 10px",
+              transform: "translate(-50%, -50%)",
+            }}
             disabled={page === 1}
           >
             上一頁
@@ -435,7 +457,11 @@ function App() {
           <Button
             onClick={handleNextPage}
             size="large"
-            style={{ left: "45%", margin: "20px 10px", transform: "translate(-50%, -50%)" }}
+            style={{
+              left: "45%",
+              margin: "20px 10px",
+              transform: "translate(-50%, -50%)",
+            }}
             disabled={page === endPage}
           >
             下一頁
@@ -447,7 +473,11 @@ function App() {
           variant="contained"
           onClick={handleSubmit}
           size="large"
-          style={{ left: "45%", margin: "20px 10px", transform: "translate(-50%, -50%)" }}
+          style={{
+            left: "45%",
+            margin: "20px 10px",
+            transform: "translate(-50%, -50%)",
+          }}
         >
           提交
         </Button>
