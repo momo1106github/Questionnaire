@@ -1,9 +1,13 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 
 export default function Title({ title, intro, vignette, supplmentary }) {
+  const matches = useMediaQuery("(min-width:1024px)");
   return (
     <>
-      <Typography variant="h3" style={{ padding: "20px", textAlign: "center" }}>
+      <Typography
+        variant={matches ? "h4" : "h5"}
+        style={{ padding: "20px 0 0 0", textAlign: "center" }}
+      >
         {title}
       </Typography>
       {intro && (
@@ -12,12 +16,18 @@ export default function Title({ title, intro, vignette, supplmentary }) {
         </Typography>
       )}
       {vignette && (
-        <Typography variant="h6" style={{ padding: "2%" }}>
+        <Typography
+          variant={matches ? "h6" : "subtitle1"}
+          style={{ padding: "2%" }}
+        >
           {vignette}
         </Typography>
       )}
       {supplmentary && (
-        <Typography variant="subtitle" style={{ padding: "20px" }}>
+        <Typography
+          variant={matches ? "subtitle" : "subtitle2"}
+          style={{ padding: "2%" }}
+        >
           {supplmentary}
         </Typography>
       )}

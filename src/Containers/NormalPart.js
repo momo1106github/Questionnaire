@@ -1,4 +1,3 @@
-import { Paper } from "@mui/material";
 import NormalQuestion from "../Components/NormalQuestion";
 import Title from "../Components/Title";
 

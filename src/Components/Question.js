@@ -12,7 +12,7 @@ export default function Question({
 }) {
   return (
     <Paper style={{ margin: "10px", padding: "10px" }}>
-      <Typography variant="body1" style={{ fontWeight: "bold" }}>
+      <Typography variant="body1" style={{ fontWeight: "bold", padding: "0px 0" }}>
         {question.description}
       </Typography>
       <RowRadioButtonsGroup

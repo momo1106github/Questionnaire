@@ -9,8 +9,8 @@ export default function IntroPage() {
       <Typography
         variant="subtitle1"
         style={{
-          marginRight: "50px",
-          marginLeft: "50px",
+          marginRight: "5%",
+          marginLeft: "5%",
           whiteSpace: "pre-line",
         }}
       >
