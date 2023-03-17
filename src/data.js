@@ -55,6 +55,7 @@ export const personal_info_questions = [
       { value: "6-10年", label: "6-10年" },
       { value: "11-15年", label: "11-15年" },
       { value: "16年以上", label: "16年以上" },
+      { value: "我不是藥師", label: "我不是藥師" },
     ],
   },
   {
@@ -64,6 +65,7 @@ export const personal_info_questions = [
       { value: "社區藥局", label: "社區藥局" },
       { value: "診所", label: "診所" },
       { value: "其他", label: "其他" },
+      { value: "我不是藥師", label: "我不是藥師" },
     ],
   },
   {
@@ -74,6 +76,7 @@ export const personal_info_questions = [
       { value: "社區藥局", label: "社區藥局" },
       { value: "診所", label: "診所" },
       { value: "其他", label: "其他" },
+      { value: "我不是藥學生", label: "我不是藥學生" },
     ],
   },
   {
@@ -84,6 +87,7 @@ export const personal_info_questions = [
       { value: "社區藥局", label: "社區藥局" },
       { value: "診所", label: "診所" },
       { value: "其他", label: "其他" },
+      { value: "我不是藥學生", label: "我不是藥學生" },
     ],
   },
 ];

@@ -207,16 +207,35 @@ function App() {
     }
   };
 
+  const checkPersonalInfoSelected = () => {
+    if (!checkAllSelected(3, 3)) {
+      alert("請填寫您的 生理性別/年齡/最高學歷");
+      return false;
+    }
+    if (!checkAllSelected(6, 1)) {
+      alert("請填寫您的 藥師執業經驗");
+      return false;
+    }
+    if (!checkAllSelected(7, 1)) {
+      alert("請填寫您的 目前執業場所");
+      return false;
+    }
+    if (!checkAllSelected(8, 1)) {
+      alert("請填寫您的 醫療機構實習經驗");
+      return false;
+    }
+    if (!checkAllSelected(9, 1)) {
+      alert("請填寫您的 醫療機構工讀經驗");
+      return false;
+    }
+    return true;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
+    // console.log(formValues);
 
-    if (page === 12) {
-      if (!checkAllSelected(3, 3)) {
-        alert("請填寫您的 生理性別/年齡/最高學歷");
-        return;
-      } else if (!checkAllSelected(10, 1)) {
-        alert("請填寫您的 email");
+    if (page === endPage) {
+      if (!checkPersonalInfoSelected()) {
         return;
       }
     }
@@ -226,11 +245,11 @@ function App() {
     for (const key in formValues) {
       formData.append(key, formValues[key]);
     }
-    formData.append("Part6_S1", get_vignette_with(1, factors[0]));
-    formData.append("Part6_S2", get_vignette_with(2, factors[1]));
-    formData.append("Part6_S3", get_vignette_with(3, factors[2]));
-    formData.append("Part6_S4", get_vignette_with(4, factors[3]));
-    formData.append("Part6_S5", get_vignette_with(5, factors[4]));
+    formData.append("Part6_S1", get_vignette_with(factors[0]));
+    formData.append("Part6_S2", get_vignette_with(factors[1]));
+    formData.append("Part6_S3", get_vignette_with(factors[2]));
+    formData.append("Part6_S4", get_vignette_with(factors[3]));
+    formData.append("Part6_S5", get_vignette_with(factors[4]));
 
     formData.append("Timestamp", new Date(timestamp).toLocaleString());
     const duration = (Date.now() - new Date(timestamp)) / 1000;
@@ -300,7 +319,6 @@ function App() {
       for (let i = 0; i < 5; i++) {
         new_factors.push(all_factors[counter + i]);
       }
-      console.log(new_factors);
       setFactors(new_factors);
     }
   }, [counter]);

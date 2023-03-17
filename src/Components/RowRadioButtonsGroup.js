@@ -32,6 +32,7 @@ export default function RowRadioButtonsGroup({
       >
         {options.map((option, i) => (
           <FormControlLabel
+            style={{ paddingRight: "5px" }}
             key={i}
             value={option.value}
             control={<Radio required />}
