@@ -27,6 +27,7 @@ import {
   personal_info_questions,
 } from "./data";
 import PersonalInfo from "./Containers/PersonalInfo";
+import { useCookies } from "react-cookie";
 
 function format_time(s) {
   return new Date(s * 1e3).toISOString().slice(-13, -5);
@@ -94,14 +95,15 @@ function get_styled_vignette_with(
 }
 
 function App() {
+  const [cookies, setCookies] = useCookies(["formValues"]);
+
   const [factors, setFactors] = useState([]);
   const [counter, setCounter] = useState();
   const [formValues, setFormValues] = useState({});
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [endPage, setEndPage] = useState(12);
 
-  const [timestamp, setTimestamp] = useState();
   const [ip, setIp] = useState();
 
   const handleInputChange = (e) => {
@@ -203,6 +205,8 @@ function App() {
     ) {
       alert("請將選項作答完畢");
     } else {
+      setCookies("formValues", formValues);
+      localStorage.setItem("page", page + 1);
       setPage((page) => page + 1);
     }
   };
@@ -230,6 +234,7 @@ function App() {
     }
     return true;
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(formValues);
@@ -239,8 +244,11 @@ function App() {
         return;
       }
     }
+    localStorage.setItem("page", page + 1);
     setPage(page + 1);
 
+    setCookies("formValues", formValues);
+    console.log(cookies.formValues);
     const formData = new FormData();
     for (const key in formValues) {
       formData.append(key, formValues[key]);
@@ -251,8 +259,9 @@ function App() {
     formData.append("Part6_S4", get_vignette_with(factors[3]));
     formData.append("Part6_S5", get_vignette_with(factors[4]));
 
-    formData.append("Timestamp", new Date(timestamp).toLocaleString());
-    const duration = (Date.now() - new Date(timestamp)) / 1000;
+    const timestamp = localStorage.getItem("timestamp");
+    formData.append("Timestamp", new Date(Date(timestamp)).toLocaleString());
+    const duration = (Date.now() - timestamp) / 1000;
     formData.append("Duration", format_time(duration));
     formData.append("IP", ip);
 
@@ -272,7 +281,15 @@ function App() {
   };
 
   useEffect(() => {
-    setTimestamp(Date.now());
+    if (localStorage.getItem("timestamp") === null) {
+      localStorage.setItem("timestamp", Date.now());
+    }
+
+    if (localStorage.getItem("page") !== null) {
+      setPage(parseInt(localStorage.getItem("page")));
+    } else {
+      setPage(1);
+    }
 
     if (localStorage.getItem("counter") !== null) {
       setCounter(localStorage.getItem("counter"));
@@ -322,6 +339,12 @@ function App() {
       setFactors(new_factors);
     }
   }, [counter]);
+
+  useEffect(() => {
+    if (cookies.formValues) {
+      setFormValues(cookies.formValues);
+    } 
+  }, [cookies.formValues]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -518,6 +541,7 @@ function App() {
         <>
           <Button
             onClick={() => {
+              localStorage.setItem("page", page - 1);
               setPage((page) => page - 1);
             }}
             size="large"
