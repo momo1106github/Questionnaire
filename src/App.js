@@ -58,8 +58,8 @@ function get_vignette_with({
   expected_impact,
   time_limit,
 }) {
-  return `你現在正在與一位 ${age} 歲的民眾對話， 這位民眾${mention_method}一個健康偏頗資訊：「${message_type}」\
-  在後續的對談中， 你發現此民眾${patient_thought}，且評估完此病人的健康狀況後，你預期這項資訊${expected_impact}該病人的健康，\
+  return `你現在於工作的藥局與一位 ${age} 歲的民眾對話，這位民眾${mention_method}一個健康偏頗資訊：「${message_type}。」\
+  在後續的對談中，你發現此民眾${patient_thought}，且評估完此民眾的身體狀況後，你預期這項資訊${expected_impact}該民眾的健康，\
   而目前你${time_limit}。`;
 }
 
@@ -79,16 +79,16 @@ function get_styled_vignette_with(
       <span style={{ fontWeight: "bold" }}>
         情境{mapNumToChinese(situation)}：
       </span>{" "}
-      你現在正在與一位 <span style={{ fontWeight: "bold" }}>{age}</span>{" "}
-      歲的民眾對話， 這位民眾
+      你現在於工作的藥局與一位 <span style={{ fontWeight: "bold" }}>{age}</span>{" "}
+      歲的民眾對話，這位民眾
       <span style={{ fontWeight: "bold" }}>{mention_method}</span>
       一個健康偏頗資訊：「
       <span style={{ fontWeight: "bold" }}>{message_type}</span>
-      」在後續的對談中， 你發現此民眾
+      。」在後續的對談中，你發現此民眾
       <span style={{ fontWeight: "bold" }}>{patient_thought}</span>
-      ，且評估完此病人的健康狀況後，你預期這項資訊
+      ，且評估完此民眾的身體狀況後，你預期這項資訊
       <span style={{ fontWeight: "bold" }}>{expected_impact}</span>
-      該病人的健康，而目前你
+      該民眾的健康，而目前你
       <span style={{ fontWeight: "bold" }}>{time_limit}</span>。
     </p>
   );
@@ -214,23 +214,35 @@ function App() {
 
   const checkPersonalInfoSelected = () => {
     if (!checkAllSelected(3, 3)) {
-      alert("請填寫您的 生理性別/年齡/最高學歷");
+      alert("請填寫 生理性別/年齡/最高學歷");
       return false;
     }
     if (!checkAllSelected(6, 1)) {
-      alert("請填寫您的 藥師執業經驗");
+      alert("請填寫 藥師執業經驗");
       return false;
     }
     if (!checkAllSelected(7, 1)) {
-      alert("請填寫您的 目前執業場所");
+      alert("請填寫 目前執業場所");
       return false;
     }
     if (!checkAllSelected(8, 1)) {
-      alert("請填寫您的 醫療機構實習經驗");
+      alert("請填寫 醫療機構實習經驗");
       return false;
     }
     if (!checkAllSelected(9, 1)) {
-      alert("請填寫您的 醫療機構工讀經驗");
+      alert("請填寫 醫療機構工讀經驗");
+      return false;
+    }
+    if (!checkAllSelected(10, 1)) {
+      alert("請填寫 經常使用之社群媒體");
+      return false;
+    }
+    if (!checkAllSelected(11, 1)) {
+      alert("請填寫 平均每天使用社群媒體的時間");
+      return false;
+    }
+    if (!checkAllSelected(12, 1)) {
+      alert("請填寫 平均每個月於社群媒體上發表或分享健康相關資訊的次數");
       return false;
     }
     return true;
