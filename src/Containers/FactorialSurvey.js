@@ -20,8 +20,8 @@ export default function FactorialSurvey({
           formValues={formValues}
           index={startIndex + i}
           handleInputChange={handleInputChange}
-          startAnnotation="非常不可能"
-          endAnnotation="非常可能"
+          startAnnotation="非常可能"
+          endAnnotation="非常不可能"
         />
       ))}
     </>
