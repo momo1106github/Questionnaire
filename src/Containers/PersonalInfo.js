@@ -23,9 +23,7 @@ export default function PersonalInfo({
       ))}
       <Paper style={{ margin: "10px", padding: "10px" }}>
         <Typography style={{ fontWeight: "bold" }}>
-          8. 請留下您常用的
-          email，經研究人員確認為有效問卷後，將寄送電子商品券於此 email。此
-          email 僅作為電子商品券之發放使用。
+          8. 若您有意願領取數位禮券，請留下您常用的email，經研究人員確認為有效問卷後，將依前200名填寫順序寄送。
         </Typography>
         <TextField
           value={formValues[col_names[num_personal_info - 1]]??""}
