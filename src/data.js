@@ -2,8 +2,8 @@ export const questionnaire_title = "台灣藥師、藥學生應對健康偏頗�
 export const questionnaire_intro = `
 各位藥師、同學們，您好，
 此問卷目的在於了解台灣藥師面對病人提及健康偏頗或有誤資訊時的應對行為，並探討相關因素之影響。
-我們非常誠摯地邀請您填寫問卷，整份問卷約需花費您 10 分鐘的時間。本研究已通過臺北醫學大學暨附屬醫院聯合人體研究倫理委員會核准，您的資料將視為機密且身分將被保密，若您在研究過程中有任何對本研究之疑慮，可隨時要求修正、刪除資料，亦可選擇退出研究，感謝您的協助。
-問卷填寫完成後，請留下 Email，填寫順序為前 200 名者，經研究人員確認為有效問卷後，我們將寄送星巴克星享飲料券一份。
+我們非常誠摯地邀請您填寫問卷，整份問卷約需花費您10分鐘的時間。本研究已通過臺北醫學大學暨附屬醫院聯合人體研究倫理委員會核准，您的資料將視為機密且身分將被保密，若您在研究過程中有任何對本研究之疑慮，可隨時要求修正、刪除資料，亦可選擇退出研究，感謝您的協助。
+問卷填寫完成後，若您有意願領取數位禮券，請留下您常用的email，經研究人員確認為有效問卷後，將依前200名填寫順序寄送。
 
 臺北醫學大學藥學系碩士班
 學生：藍詩函
@@ -15,7 +15,7 @@ export const questionnaire_intro = `
 Email: m301110033@tmu.edu.tw
 `;
 
-export const num_personal_info = 11;
+export const num_personal_info = 14;
 export const personal_info_questions = [
   {
     description: "1. 生理性別",
@@ -47,47 +47,80 @@ export const personal_info_questions = [
     ],
   },
   {
-    description: "4. (僅藥師填寫)藥師執業經驗",
+    description: "4. 藥師執業經驗",
     options: [
-      { value: "未滿1年", label: "未滿1年" },
-      { value: "1-2年", label: "1-2年" },
-      { value: "3-5年", label: "3-5年" },
+      { value: "0-2年", label: "0-2年" },
+      { value: "3-5年", label: "3-5年" },      
       { value: "6-10年", label: "6-10年" },
       { value: "11-15年", label: "11-15年" },
       { value: "16年以上", label: "16年以上" },
-      { value: "我不是藥師", label: "我不是藥師" },
+      { value: "尚未取得證書", label: "尚未取得證書" },
+      { value: "已取得證書但尚未執登", label: "已取得證書但尚未執登" },
     ],
   },
   {
-    description: "5. (僅藥師填寫)目前執業場所",
+    description: "5. 目前執業場所",
     options: [
       { value: "醫院", label: "醫院" },
       { value: "社區藥局", label: "社區藥局" },
       { value: "診所", label: "診所" },
+      { value: "尚未取得證書", label: "尚未取得證書" },
+      { value: "已取得證書但尚未執登", label: "已取得證書但尚未執登" },
       { value: "其他", label: "其他" },
-      { value: "我不是藥師", label: "我不是藥師" },
     ],
   },
   {
-    description: "6. (僅藥學生填寫)醫療機構實習經驗  *註：志工不包含在內",
-    options: [
-      { value: "無", label: "無" },
-      { value: "醫院", label: "醫院" },
-      { value: "社區藥局", label: "社區藥局" },
-      { value: "診所", label: "診所" },
-      { value: "其他", label: "其他" },
-      { value: "我不是藥學生", label: "我不是藥學生" },
-    ],
-  },
-  {
-    description: "7. (僅藥學生填寫)醫療機構工讀經驗  *註：志工不包含在內",
+    description: "6. 醫療機構實習經驗  *註：志工不包含在內",
     options: [
       { value: "無", label: "無" },
       { value: "醫院", label: "醫院" },
       { value: "社區藥局", label: "社區藥局" },
       { value: "診所", label: "診所" },
       { value: "其他", label: "其他" },
-      { value: "我不是藥學生", label: "我不是藥學生" },
+    ],
+  },
+  {
+    description: "7. 醫療機構工讀經驗  *註：志工不包含在內",
+    options: [
+      { value: "無", label: "無" },
+      { value: "醫院", label: "醫院" },
+      { value: "社區藥局", label: "社區藥局" },
+      { value: "診所", label: "診所" },
+      { value: "其他", label: "其他" },
+    ],
+  },
+  {
+    description: "8. 經常使用之社群媒體",
+    options: [
+      { value: "Facebook", label: "Facebook" },
+      { value: "Instagram", label: "Instagram" },
+      { value: "LINE", label: "LINE" },
+      { value: "Twitter", label: "Twitter" },
+      { value: "Youtube", label: "Youtube" },
+      { value: "Tiktok", label: "Tiktok" },
+      { value: "Blog", label: "Blog" },
+      { value: "LinkedIn", label: "LinkedIn" },
+      { value: "其他", label: "其他" },
+    ],
+  },
+  {
+    description: "9. 平均每天使用社群媒體的時間",
+    options: [
+      { value: "每天<30分鐘", label: "每天<30分鐘" },
+      { value: "每天30分鐘-1小時(不包含1小時)", label: "每天30分鐘-1小時(不包含1小時)" },
+      { value: "每天1-2小時(不包含2小時)", label: "每天1-2小時(不包含2小時)" },
+      { value: "每天2-3小時(不包含3小時)", label: "每天2-3小時(不包含3小時)" },
+      { value: "每天3小時以上", label: "每天3小時以上" },
+    ],
+  },
+  {
+    description: "10. 平均每個月於社群媒體上發表或分享健康相關資訊的次數",
+    options: [
+      { value: "每月0次", label: "每月0次" },
+      { value: "每月1-2次", label: "每月1-2次" },
+      { value: "每月3-5次", label: "每月3-5次" },
+      { value: "每月6-10次", label: "每月6-10次" },
+      { value: "每月>10次", label: "每月>10次" },
     ],
   },
 ];
@@ -103,6 +136,9 @@ export const col_names = [
   "目前職業場所",
   "醫療機構實習經驗",
   "醫療機構工讀經驗",
+  "經常使用之社群媒體",
+  "每天社群媒體使用時間",
+  "每個月分享次數",
   "Email",
   "Part1_Q1_1",
   "Part1_Q1_2",
@@ -227,7 +263,7 @@ export const part1_questions = [
   },
   {
     description:
-      "2. 我認為在社群媒體或公開場合釐清偏頗或有誤的健康資訊：請勾選最符合您想法的敘述",
+      "2. 我認為在社群媒體釐清偏頗或有誤的健康資訊：請勾選最符合您想法的敘述",
     sub_questions: [
       {
         text: "(1)",
@@ -277,10 +313,10 @@ export const num_part2 = 10;
 export const part2_questions = [
   {
     description:
-      "1. 對於與病人釐清偏頗或有誤的健康資訊，以下這些我身旁的人認為我應該這麼做：",
+      "1. 以下這些人對於「我應該與病人釐清偏頗或有誤的健康資訊」之同意程度：",
     sub_questions: [
       {
-        text: "(1) 我的親朋好友們",
+        text: "(1) 我的親朋好友",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -310,7 +346,7 @@ export const part2_questions = [
         ],
       },
       {
-        text: "(4) 我的病人/客戶",
+        text: "(4) 我的病人/顧客",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -333,10 +369,10 @@ export const part2_questions = [
   },
   {
     description:
-      "2. 對於在社群媒體或公開場合釐清偏頗或有誤的健康資訊，以下這些我身旁的人認為我應該這麼做：",
+      "2. 以下這些人對於「我應該在社群媒體釐清偏頗或有誤的健康資訊」之同意程度：",
     sub_questions: [
       {
-        text: "(1) 我的親朋好友們",
+        text: "(1) 我的親朋好友",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -366,7 +402,7 @@ export const part2_questions = [
         ],
       },
       {
-        text: "(4) 我的病人/客戶",
+        text: "(4) 我的病人/顧客",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -395,7 +431,7 @@ export const part3_questions = [
     description: "",
     sub_questions: [
       {
-        text: "1. 我是醫藥專業領域的一員。",
+        text: "1. 我覺得我是藥學專業領域的一份子。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -405,7 +441,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "2. 我與醫藥專業的人員有緊密的關係。",
+        text: "2. 我覺得我與藥學專業領域的其他成員有緊密的關係。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -415,7 +451,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "3. 我經常羞於承認自己是醫藥專業領域的一員。",
+        text: "3. 我經常羞於承認自己是藥學專業領域的一份子。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -425,7 +461,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "4. 我發現我會因為身為醫藥專業領域的一員而找藉口。",
+        text: "4. 我發現我會對自己是藥學專業領域的一份子找理由。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -435,7 +471,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "5. 我會嘗試隱瞞我是醫藥專業領域的一員。",
+        text: "5. 我會試圖隱瞞我是藥學專業領域的一份子。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -445,7 +481,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "6. 我很高興自己是醫藥專業領域的一員。",
+        text: "6. 我很高興自己是藥學專業領域的一份子。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -455,7 +491,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "7. 我可以很認同醫藥專業領域的一員。",
+        text: "7. 我可以跟藥學專業領域的其他成員產生共鳴。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -465,7 +501,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "8. 身為醫藥專業領域的一員對我來說很重要。",
+        text: "8. 身為藥學專業領域的一份子對我來說很重要。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -475,7 +511,7 @@ export const part3_questions = [
         ],
       },
       {
-        text: "9. 我認為我與醫藥專業領域的其他成員有共同的特質。",
+        text: "9. 我覺得我與藥學專業領域的其他成員有共同的特質。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -494,7 +530,7 @@ export const part4_questions = [
     description: "您對於親自執行下列行為的信心程度為何：",
     sub_questions: [
       {
-        text: "1. 我能夠在病人病人提及健康資訊時，判斷該資訊的真實性。",
+        text: "1. 我能夠在病人提及健康相關資訊時，判斷該資訊的真實性。",
         options: [
           { value: "非常有信心", label: "非常有信心" },
           { value: "有信心", label: "有信心" },
@@ -554,7 +590,7 @@ export const part4_questions = [
         ],
       },
       {
-        text: "7. 我能夠在社群媒體或公開場合釐清健康偏頗或有誤資訊。",
+        text: "7. 我能夠在社群媒體釐清健康偏頗或有誤資訊。",
         options: [
           { value: "非常有信心", label: "非常有信心" },
           { value: "有信心", label: "有信心" },
@@ -583,7 +619,7 @@ export const part5_questions = [
     description: "",
     sub_questions: [
       {
-        text: "1. 我經常遇到病人提及的健康偏頗資訊或有誤資訊。",
+        text: "1. 我經常遇到病人/顧客提及健康偏頗或有誤資訊。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -593,7 +629,7 @@ export const part5_questions = [
         ],
       },
       {
-        text: "2. 我經常和病人討論健康偏頗或有誤資訊。",
+        text: "2. 我經常和病人/顧客討論健康偏頗或有誤資訊。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -603,7 +639,7 @@ export const part5_questions = [
         ],
       },
       {
-        text: "3. 我經常與同儕、同事分享自己與病人討論健康偏頗或有誤資訊的經驗。",
+        text: "3. 我經常與同事/同學分享自己與病人/顧客討論健康偏頗或有誤資訊的經驗。",
         options: [
           { value: "非常同意", label: "非常同意" },
           { value: "同意", label: "同意" },
@@ -648,57 +684,57 @@ export const part5_questions = [
 
 export const num_factorial_survey = 5;
 export const factorial_survey_intro =
-  "請依照此情境，填寫您會做出下列行為的可能性(-5~5分，-5代表非常不可能；5代表非常可能)";
+  "請依照此情境，填寫您會做出下列行為的可能性(5代表非常可能；-5代表非常不可能)";
 export const factorial_survey_questions = [
   {
     // 1
-    description: "1. 我會和此病人簡單說明該資訊有偏頗或有誤。",
+    description: "1. 我會和此民眾說明該資訊有偏頗或有誤。",
     options: [
-      { value: -5, label: -5 },
-      { value: -4, label: -4 },
-      { value: -3, label: -3 },
-      { value: -2, label: -2 },
-      { value: -1, label: -1 },
-      { value: 0, label: 0 },
-      { value: 1, label: 1 },
-      { value: 2, label: 2 },
-      { value: 3, label: 3 },
-      { value: 4, label: 4 },
       { value: 5, label: 5 },
+      { value: 4, label: 4 },
+      { value: 3, label: 3 },
+      { value: 2, label: 2 },
+      { value: 1, label: 1 },
+      { value: 0, label: 0 },
+      { value: -1, label: -1 },
+      { value: -2, label: -2 },
+      { value: -3, label: -3 },
+      { value: -4, label: -4 },
+      { value: -5, label: -5 },
     ],
   },
   {
     // 2
-    description: "2. 我會詳細地和此病人釐清健康偏頗或有誤資訊。",
+    description: "2. 我會詳細地和此民眾釐清健康偏頗或有誤資訊。",
     options: [
-      { value: -5, label: -5 },
-      { value: -4, label: -4 },
-      { value: -3, label: -3 },
-      { value: -2, label: -2 },
-      { value: -1, label: -1 },
-      { value: 0, label: 0 },
-      { value: 1, label: 1 },
-      { value: 2, label: 2 },
-      { value: 3, label: 3 },
-      { value: 4, label: 4 },
       { value: 5, label: 5 },
+      { value: 4, label: 4 },
+      { value: 3, label: 3 },
+      { value: 2, label: 2 },
+      { value: 1, label: 1 },
+      { value: 0, label: 0 },
+      { value: -1, label: -1 },
+      { value: -2, label: -2 },
+      { value: -3, label: -3 },
+      { value: -4, label: -4 },
+      { value: -5, label: -5 },
     ],
   },
   {
     // 3
-    description: "3. 我會避免和此病人談論此資訊。",
+    description: "3. 我會避免和此民眾談論此資訊。",
     options: [
-      { value: -5, label: -5 },
-      { value: -4, label: -4 },
-      { value: -3, label: -3 },
-      { value: -2, label: -2 },
-      { value: -1, label: -1 },
-      { value: 0, label: 0 },
-      { value: 1, label: 1 },
-      { value: 2, label: 2 },
-      { value: 3, label: 3 },
-      { value: 4, label: 4 },
       { value: 5, label: 5 },
+      { value: 4, label: 4 },
+      { value: 3, label: 3 },
+      { value: 2, label: 2 },
+      { value: 1, label: 1 },
+      { value: 0, label: 0 },
+      { value: -1, label: -1 },
+      { value: -2, label: -2 },
+      { value: -3, label: -3 },
+      { value: -4, label: -4 },
+      { value: -5, label: -5 },
     ],
   },
   {
@@ -706,34 +742,34 @@ export const factorial_survey_questions = [
     description:
       "4. 我會額外在公開的網路社團、群組上釐清此健康偏頗或有誤資訊。",
     options: [
-      { value: -5, label: -5 },
-      { value: -4, label: -4 },
-      { value: -3, label: -3 },
-      { value: -2, label: -2 },
-      { value: -1, label: -1 },
-      { value: 0, label: 0 },
-      { value: 1, label: 1 },
-      { value: 2, label: 2 },
-      { value: 3, label: 3 },
-      { value: 4, label: 4 },
       { value: 5, label: 5 },
+      { value: 4, label: 4 },
+      { value: 3, label: 3 },
+      { value: 2, label: 2 },
+      { value: 1, label: 1 },
+      { value: 0, label: 0 },
+      { value: -1, label: -1 },
+      { value: -2, label: -2 },
+      { value: -3, label: -3 },
+      { value: -4, label: -4 },
+      { value: -5, label: -5 },
     ],
   },
   {
     // 5
     description: "5. 我會製作相關健康資訊的文宣，並張貼於社群媒體或公開場合。",
     options: [
-      { value: -5, label: -5 },
-      { value: -4, label: -4 },
-      { value: -3, label: -3 },
-      { value: -2, label: -2 },
-      { value: -1, label: -1 },
-      { value: 0, label: 0 },
-      { value: 1, label: 1 },
-      { value: 2, label: 2 },
-      { value: 3, label: 3 },
-      { value: 4, label: 4 },
       { value: 5, label: 5 },
+      { value: 4, label: 4 },
+      { value: 3, label: 3 },
+      { value: 2, label: 2 },
+      { value: 1, label: 1 },
+      { value: 0, label: 0 },
+      { value: -1, label: -1 },
+      { value: -2, label: -2 },
+      { value: -3, label: -3 },
+      { value: -4, label: -4 },
+      { value: -5, label: -5 },
     ],
   },
 ];
