@@ -18,6 +18,7 @@ const patient_thoughts = ["非常相信該訊息", "對訊息持有懷疑態度"
 const time_limits = ["有足夠的時間", "時間有限"];
 
 let vignettes = [];
+let factors = [];
 
 ages.forEach((age) => {
   mention_methods.forEach((mention_method) => {
@@ -25,9 +26,17 @@ ages.forEach((age) => {
       expected_impacts.forEach((expected_impact) => {
         patient_thoughts.forEach((patient_thought) => {
           time_limits.forEach((time_limit) => {
-            vignettes.push(
-              `你現在正在與一位 ${age} 歲的民眾對話，這位民眾${mention_method}一個健康偏頗資訊：「${message_type}」在後續的對談中，你發現此民眾${patient_thought}，且評估完此病人的健康狀況後，你預期這項資訊${expected_impact}該病人的健康，而目前你${time_limit}。`
-            );
+            // vignettes.push(
+            //   `你現在正在與一位 ${age} 歲的民眾對話，這位民眾${mention_method}一個健康偏頗資訊：「${message_type}」在後續的對談中，你發現此民眾${patient_thought}，且評估完此病人的健康狀況後，你預期這項資訊${expected_impact}該病人的健康，而目前你${time_limit}。`
+            // );
+            factors.push({
+              age: age,
+              mention_method: mention_method,
+              message_type: message_type,
+              expected_impact: expected_impact,
+              patient_thought: patient_thought,
+              time_limit: time_limit,
+            });
           });
         });
       });
@@ -44,7 +53,8 @@ const shuffleArray = (array) => {
   }
 };
 
-shuffleArray(vignettes);
+// shuffleArray(vignettes);
+shuffleArray(factors);
 
 // const csvWriter = createObjectCsvWriter({
 //   path: "vignettes.csv",
@@ -57,16 +67,29 @@ shuffleArray(vignettes);
 
 // console.log(vignettes);
 
+// fs.writeFile(
+//   "vignettes.json",
+//   JSON.stringify(vignettes),
+//   "utf8",
+//   function (err) {
+//     if (err) {
+//       console.log("An error occured while writing JSON Object to File.");
+//       return console.log(err);
+//     }
+
+//     console.log("JSON file has been saved.");
+//   }
+// );
+
 fs.writeFile(
-  "vignettes.json",
-  JSON.stringify(vignettes),
+  "factors.json",
+  JSON.stringify(factors),
   "utf8",
   function (err) {
     if (err) {
       console.log("An error occured while writing JSON Object to File.");
       return console.log(err);
     }
-
     console.log("JSON file has been saved.");
   }
 );
