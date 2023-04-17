@@ -108,6 +108,7 @@ function App() {
 
   const handleInputChange = (e) => {
     let { name, value } = e.target;
+    console.log(name, value)
     setFormValues({
       ...formValues,
       [name === "" ? "Email" : name]: value,

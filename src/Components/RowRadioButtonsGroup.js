@@ -3,7 +3,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { col_names } from "../data";
-import { Typography } from "@mui/material";
+import { Typography, TextField } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function RowRadioButtonsGroup({
@@ -30,16 +30,39 @@ export default function RowRadioButtonsGroup({
         value={formValues[col_names[index]] ?? ""}
         onChange={handleInputChange}
       >
-        {options.map((option, i) => (
-          <FormControlLabel
-            style={{ paddingRight: "5px" }}
-            key={i}
-            value={option.value}
-            control={<Radio required />}
-            label={option.label}
-            // labelPlacement="bottom"
-          />
-        ))}
+        {options.map((option, i) => {
+          if (option.value === "其他") {
+            return (
+              <FormControlLabel
+                style={{ paddingRight: "5px" }}
+                key={i}
+                value={option.value}
+                control={<Radio required />}
+                label={
+                  <>
+                    {option.value + "： "}
+                    <TextField
+                      size="small"
+                      value={formValues.custom}
+                      onChange={handleInputChange}
+                      
+                    />
+                  </>
+                }
+              />
+            );
+          } else
+            return (
+              <FormControlLabel
+                style={{ paddingRight: "5px" }}
+                key={i}
+                value={option.value}
+                control={<Radio required />}
+                label={option.label}
+                // labelPlacement="bottom"
+              />
+            );
+        })}
       </RadioGroup>
       <div style={{ display: "flex" }}>
         {matches && (
