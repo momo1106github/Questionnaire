@@ -13,6 +13,8 @@ export default function RowRadioButtonsGroup({
   handleInputChange,
   startAnnotation,
   endAnnotation,
+  customInputs,
+  setCustomInputs,
 }) {
   const matches = useMediaQuery("(min-width:1024px)");
   return (
@@ -31,7 +33,8 @@ export default function RowRadioButtonsGroup({
         onChange={handleInputChange}
       >
         {options.map((option, i) => {
-          if (option.value === "其他") {
+          if (option.label === "其他") {
+            const customInputIndex = option.value.split(".")[0];
             return (
               <FormControlLabel
                 style={{ paddingRight: "5px" }}
@@ -40,12 +43,18 @@ export default function RowRadioButtonsGroup({
                 control={<Radio required />}
                 label={
                   <>
-                    {option.value + "： "}
+                    {option.label + "： "}
                     <TextField
+                      disabled={true}
                       size="small"
-                      value={formValues.custom}
-                      onChange={handleInputChange}
-                      
+                      value={customInputs[customInputIndex]}
+                      onChange={(e) => {
+                        setCustomInputs((customInputs) => {
+                          const new_customInputs = [...customInputs];
+                          new_customInputs[customInputIndex] = e.target.value;
+                          return new_customInputs;
+                        });
+                      }}
                     />
                   </>
                 }

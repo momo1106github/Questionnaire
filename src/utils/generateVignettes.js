@@ -1,4 +1,4 @@
-import { createObjectCsvWriter } from "csv-writer";
+// import { createObjectCsvWriter } from "csv-writer";
 import fs from "fs";
 
 const ages = [25, 45, 70];

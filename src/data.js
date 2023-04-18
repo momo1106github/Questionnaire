@@ -43,7 +43,7 @@ export const personal_info_questions = [
       { value: "臨床藥學士/Pharm. D", label: "臨床藥學士/Pharm. D" },
       { value: "碩士", label: "碩士" },
       { value: "博士", label: "博士" },
-      { value: "其他", label: "其他" },
+      { value: "3.其他", label: "其他" },
     ],
   },
   {
@@ -66,7 +66,7 @@ export const personal_info_questions = [
       { value: "診所", label: "診所" },
       { value: "尚未取得證書", label: "尚未取得證書" },
       { value: "已取得證書但尚未執登", label: "已取得證書但尚未執登" },
-      { value: "其他", label: "其他" },
+      { value: "5.其他", label: "其他" },
     ],
   },
   {
@@ -76,7 +76,7 @@ export const personal_info_questions = [
       { value: "醫院", label: "醫院" },
       { value: "社區藥局", label: "社區藥局" },
       { value: "診所", label: "診所" },
-      { value: "其他", label: "其他" },
+      { value: "6.其他", label: "其他" },
     ],
   },
   {
@@ -86,7 +86,7 @@ export const personal_info_questions = [
       { value: "醫院", label: "醫院" },
       { value: "社區藥局", label: "社區藥局" },
       { value: "診所", label: "診所" },
-      { value: "其他", label: "其他" },
+      { value: "7.其他", label: "其他" },
     ],
   },
   {
@@ -100,7 +100,7 @@ export const personal_info_questions = [
       { value: "Tiktok", label: "Tiktok" },
       { value: "Blog", label: "Blog" },
       { value: "LinkedIn", label: "LinkedIn" },
-      { value: "其他", label: "其他" },
+      { value: "8.其他", label: "其他" },
     ],
   },
   {

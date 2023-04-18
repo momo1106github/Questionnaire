@@ -101,18 +101,24 @@ function App() {
   const [counter, setCounter] = useState();
   const [formValues, setFormValues] = useState({});
 
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(12);
   const [endPage, setEndPage] = useState(12);
 
   const [ip, setIp] = useState();
 
+  const [customInputs, setCustomInputs] = useState(
+    Array(num_personal_info - 3 + 1).fill("")
+  );
+
   const handleInputChange = (e) => {
     let { name, value } = e.target;
-    console.log(name, value)
+    // console.log(name, value);
     setFormValues({
       ...formValues,
       [name === "" ? "Email" : name]: value,
     });
+
+    // console.log(formValues);
   };
 
   const checkAllSelected = (startIndex, count) => {
@@ -261,7 +267,13 @@ function App() {
     setPage(page + 1);
 
     setCookies("formValues", formValues);
-    console.log(cookies.formValues);
+    for (const key in formValues) {
+      if (formValues[key].includes(".")) {
+        const index = formValues[key].split(".")[0];
+        formValues[key] = customInputs[index] ? customInputs[index] : "其他";
+      }
+    }
+
     const formData = new FormData();
     for (const key in formValues) {
       formData.append(key, formValues[key]);
@@ -305,7 +317,7 @@ function App() {
     }
 
     if (localStorage.getItem("counter") !== null) {
-      setCounter(localStorage.getItem("counter"));
+      setCounter(parseInt(localStorage.getItem("counter")));
     } else {
       fetch(configData.counterUrl, {
         method: "GET",
@@ -356,7 +368,7 @@ function App() {
   useEffect(() => {
     if (cookies.formValues) {
       setFormValues(cookies.formValues);
-    } 
+    }
   }, [cookies.formValues]);
 
   useEffect(() => {
@@ -541,6 +553,8 @@ function App() {
                   formValues={formValues}
                   handleInputChange={handleInputChange}
                   startIndex={3}
+                  customInputs={customInputs}
+                  setCustomInputs={setCustomInputs}
                 />
               );
             case 13:

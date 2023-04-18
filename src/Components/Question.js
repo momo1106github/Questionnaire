@@ -9,6 +9,8 @@ export default function Question({
   handleInputChange,
   startAnnotation,
   endAnnotation,
+  customInputs,
+  setCustomInputs
 }) {
   return (
     <Paper style={{ margin: "10px", padding: "10px" }}>
@@ -23,6 +25,8 @@ export default function Question({
         handleInputChange={handleInputChange}
         startAnnotation={startAnnotation}
         endAnnotation={endAnnotation}
+        customInputs={customInputs}
+        setCustomInputs={setCustomInputs}
       />
     </Paper>
   );
