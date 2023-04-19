@@ -18,33 +18,29 @@ export default function CheckboxesGroup({
   const matches = useMediaQuery("(min-width:1024px)");
 
   const onClick = () => {
-    console.log(
-      "clicked " +
-        textfieldRef.current.children[0].children[0].focus
-    );
     textfieldRef.current.children[0].children[0].disabled =
       !textfieldRef.current.children[0].children[0].disabled;
     if (
-      document.activeElement !==
-      textfieldRef.current.children[0].children[0]
+      document.activeElement !== textfieldRef.current.children[0].children[0]
     ) {
       textfieldRef.current.children[0].children[0].focus();
     } else {
       textfieldRef.current.children[0].children[0].blur();
     }
-  }
+  };
+
   const handleChange = (e) => {
     const { name, checked } = e.target;
-    const [index, value] = name.split(".");
-    console.log(index, value, checked);
+    const index = name.split(".")[0];
+    // console.log(index, name, checked);
     setCheckboxInputs((checkboxInputs) => {
       const new_checkboxInputs = [...checkboxInputs];
       if (checked) {
-        new_checkboxInputs[index][value] = checked;
+        new_checkboxInputs[index][name] = checked;
       } else {
-        delete new_checkboxInputs[index][value];
+        delete new_checkboxInputs[index][name];
       }
-      console.log(new_checkboxInputs);
+      // console.log(new_checkboxInputs);
       return new_checkboxInputs;
     });
   };
@@ -60,12 +56,7 @@ export default function CheckboxesGroup({
                 style={{ paddingRight: "5px" }}
                 key={i}
                 value={option.value}
-                control={
-                  <Checkbox
-                    name={option.value}
-                    onClick={onClick}
-                  />
-                }
+                control={<Checkbox name={option.value} onClick={onClick} />}
                 label={
                   <>
                     {option.label + "： "}
@@ -77,7 +68,6 @@ export default function CheckboxesGroup({
                         setCustomInputs((customInputs) => {
                           const new_customInputs = [...customInputs];
                           new_customInputs[customInputIndex] = e.target.value;
-                          console.log(new_customInputs);
                           return new_customInputs;
                         });
                       }}

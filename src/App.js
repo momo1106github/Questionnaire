@@ -110,34 +110,19 @@ function App() {
     Array(num_personal_info - 3 + 1).fill("")
   );
   const [checkboxInputs, setCheckboxInputs] = useState(
-    Array(num_personal_info - 3 + 1).fill().map(x => ({}))
+    Array(num_personal_info - 3 + 1)
+      .fill()
+      .map((x) => ({}))
   );
 
   const handleInputChange = (e) => {
-    
-    // if (e.target.checked) {
-    //   const { name, checked } = e.target;
-    //   console.log("name:", name, ", checked:", checked);
-    //   setFormValues(formValues => {
-    //     const newFormValues = {...formValues};
-    //     if (!newFormValues[name]) {
-    //       newFormValues[name] = []
-    //     } else newFormValues[name].push()
-
-    //   })
-    // } else {
-      const { name, value } = e.target;
-      console.log("name:", name, ", value:", value);
-      setFormValues({
-        ...formValues,
-        [name === "" ? "Email" : name]: value,
-      });
-      console.log(formValues)
-    // }
-    
-    
-
-    // console.log(formValues);
+    const { name, value } = e.target;
+    // console.log("name:", name, ", value:", value);
+    setFormValues({
+      ...formValues,
+      [name === "" ? "Email" : name]: value,
+    });
+    // console.log(formValues)
   };
 
   const checkAllSelected = (startIndex, count) => {
@@ -274,23 +259,36 @@ function App() {
   };
 
   const updateFormValues = () => {
-    for (let i = 0; i < checkboxInputs.length-1; i++) {
+    for (let i = 0; i < checkboxInputs.length - 1; i++) {
       if (Object.keys(checkboxInputs[i]).length > 0) {
-        formValues[col_names[i + 3 - 1]] = []
+        formValues[col_names[i + 3 - 1]] = [];
         for (const option in checkboxInputs[i]) {
-          formValues[col_names[i + 3 - 1]].push(option)
+          formValues[col_names[i + 3 - 1]].push(option);
+        }
+      }
+    }
+
+    // console.log(formValues);
+
+    for (const key in formValues) {
+      if (formValues[key].includes("其他")) {
+        const index = formValues[key].split(".")[0];
+        formValues[key] = "其他: " + customInputs[index];
+      } else if (formValues[key] instanceof Array) {
+        // checkbox
+        for (let i = 0; i < formValues[key].length; i++) {
+          const option = formValues[key][i];
+          if (option.includes("其他")) {
+            const index = option.split(".")[0];
+            formValues[key][i] = "其他: " + customInputs[index];
+          } else {
+            formValues[key][i] = formValues[key][i].substring(2);
+          }
         }
       }
     }
     console.log(formValues);
-    for (const key in formValues) {
-      if (formValues[key].includes(".")) {
-        const index = formValues[key].split(".")[0];
-        formValues[key] =  "其他: " + customInputs[index];
-      }
-    }
-    console.log(formValues);
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -301,14 +299,12 @@ function App() {
     if (!checkPersonalInfoSelected()) {
       return;
     }
-    
-    // localStorage.setItem("page", page + 1);
-    // setPage(page + 1);
 
-    
+    localStorage.setItem("page", page + 1);
+    setPage(page + 1);
 
-    // setCookies("formValues", formValues);
-    
+    setCookies("formValues", formValues);
+
     const formData = new FormData();
     for (const key in formValues) {
       formData.append(key, formValues[key]);
@@ -366,7 +362,7 @@ function App() {
           const counterFormData = new FormData();
           counterFormData.append(
             "counter",
-            parseInt(localStorage.getItem("counter")) + 5
+            (parseInt(localStorage.getItem("counter")) + 5) % all_factors.length
           );
           fetch(configData.counterUrl, {
             method: "POST",
@@ -394,7 +390,7 @@ function App() {
     if (counter) {
       const new_factors = [];
       for (let i = 0; i < 5; i++) {
-        new_factors.push(all_factors[counter + i]);
+        new_factors.push(all_factors[(counter + i) % all_factors.length]);
       }
       setFactors(new_factors);
     }
