@@ -263,7 +263,7 @@ export const part1_questions = [
   },
   {
     description:
-      "2. 我認為在社群媒體釐清偏頗或有誤的健康資訊：請勾選最符合您想法的敘述",
+      "2. 我認為在社群媒體上釐清偏頗或有誤的健康資訊：請勾選最符合您想法的敘述",
     sub_questions: [
       {
         text: "(1)",
@@ -369,7 +369,7 @@ export const part2_questions = [
   },
   {
     description:
-      "2. 以下這些人對於「我應該在社群媒體釐清偏頗或有誤的健康資訊」之同意程度：",
+      "2. 以下這些人對於「我應該在社群媒體上釐清偏頗或有誤的健康資訊」之同意程度：",
     sub_questions: [
       {
         text: "(1) 我的親朋好友",
@@ -590,7 +590,7 @@ export const part4_questions = [
         ],
       },
       {
-        text: "7. 我能夠在社群媒體釐清健康偏頗或有誤資訊。",
+        text: "7. 我能夠在社群媒體上釐清健康偏頗或有誤資訊。",
         options: [
           { value: "非常有信心", label: "非常有信心" },
           { value: "有信心", label: "有信心" },
@@ -722,7 +722,7 @@ export const factorial_survey_questions = [
   },
   {
     // 3
-    description: "3. 我會避免和此民眾談論此資訊。",
+    description: "3. 我會避免和此民眾談論該資訊。",
     options: [
       { value: 5, label: 5 },
       { value: 4, label: 4 },
