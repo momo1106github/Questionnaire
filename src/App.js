@@ -109,14 +109,33 @@ function App() {
   const [customInputs, setCustomInputs] = useState(
     Array(num_personal_info - 3 + 1).fill("")
   );
+  const [checkboxInputs, setCheckboxInputs] = useState(
+    Array(num_personal_info - 3 + 1).fill().map(x => ({}))
+  );
 
   const handleInputChange = (e) => {
-    let { name, value } = e.target;
-    // console.log(name, value);
-    setFormValues({
-      ...formValues,
-      [name === "" ? "Email" : name]: value,
-    });
+    
+    // if (e.target.checked) {
+    //   const { name, checked } = e.target;
+    //   console.log("name:", name, ", checked:", checked);
+    //   setFormValues(formValues => {
+    //     const newFormValues = {...formValues};
+    //     if (!newFormValues[name]) {
+    //       newFormValues[name] = []
+    //     } else newFormValues[name].push()
+
+    //   })
+    // } else {
+      const { name, value } = e.target;
+      console.log("name:", name, ", value:", value);
+      setFormValues({
+        ...formValues,
+        [name === "" ? "Email" : name]: value,
+      });
+      console.log(formValues)
+    // }
+    
+    
 
     // console.log(formValues);
   };
@@ -254,26 +273,42 @@ function App() {
     return true;
   };
 
+  const updateFormValues = () => {
+    for (let i = 0; i < checkboxInputs.length-1; i++) {
+      if (Object.keys(checkboxInputs[i]).length > 0) {
+        formValues[col_names[i + 3 - 1]] = []
+        for (const option in checkboxInputs[i]) {
+          formValues[col_names[i + 3 - 1]].push(option)
+        }
+      }
+    }
+    console.log(formValues);
+    for (const key in formValues) {
+      if (formValues[key].includes(".")) {
+        const index = formValues[key].split(".")[0];
+        formValues[key] =  "其他: " + customInputs[index];
+      }
+    }
+    console.log(formValues);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(formValues);
 
-    if (page === endPage) {
-      if (!checkPersonalInfoSelected()) {
-        return;
-      }
-    }
-    localStorage.setItem("page", page + 1);
-    setPage(page + 1);
+    updateFormValues();
 
-    setCookies("formValues", formValues);
-    for (const key in formValues) {
-      if (formValues[key].includes(".")) {
-        const index = formValues[key].split(".")[0];
-        formValues[key] = customInputs[index] ? customInputs[index] : "其他";
-      }
+    if (!checkPersonalInfoSelected()) {
+      return;
     }
+    
+    // localStorage.setItem("page", page + 1);
+    // setPage(page + 1);
 
+    
+
+    // setCookies("formValues", formValues);
+    
     const formData = new FormData();
     for (const key in formValues) {
       formData.append(key, formValues[key]);
@@ -555,6 +590,9 @@ function App() {
                   startIndex={3}
                   customInputs={customInputs}
                   setCustomInputs={setCustomInputs}
+                  checkboxInputs={checkboxInputs}
+                  setCheckboxInputs={setCheckboxInputs}
+                  updateFormValues={updateFormValues}
                 />
               );
             case 13:

@@ -5,6 +5,7 @@ import FormControl from "@mui/material/FormControl";
 import { col_names } from "../data";
 import { Typography, TextField } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useRef } from "react";
 
 export default function RowRadioButtonsGroup({
   options,
@@ -17,6 +18,15 @@ export default function RowRadioButtonsGroup({
   setCustomInputs,
 }) {
   const matches = useMediaQuery("(min-width:1024px)");
+  const textfieldRef = useRef();
+
+  const onClick = () => {
+    console.log("clicked " + textfieldRef.current.children[0].children[0]);
+    textfieldRef.current.children[0].children[0].disabled =
+      !textfieldRef.current.children[0].children[0].disabled;
+
+    textfieldRef.current.children[0].children[0].focus();
+  };
   return (
     <FormControl>
       {!matches && (
@@ -40,7 +50,7 @@ export default function RowRadioButtonsGroup({
                 style={{ paddingRight: "5px" }}
                 key={i}
                 value={option.value}
-                control={<Radio required />}
+                control={<Radio required onClick={onClick} />}
                 label={
                   <>
                     {option.label + "： "}
@@ -55,6 +65,7 @@ export default function RowRadioButtonsGroup({
                           return new_customInputs;
                         });
                       }}
+                      ref={textfieldRef}
                     />
                   </>
                 }
@@ -63,7 +74,7 @@ export default function RowRadioButtonsGroup({
           } else
             return (
               <FormControlLabel
-                style={{ paddingRight: "5px" }}
+                style={{ paddingRight: "20px" }}
                 key={i}
                 value={option.value}
                 control={<Radio required />}
@@ -86,8 +97,8 @@ export default function RowRadioButtonsGroup({
           variant="body2"
           style={{
             position: "absolute",
-            right: matches ? "0%" : "",
-            bottom: "0%",
+            right: matches ? "0%" : "-7%",
+            bottom: "-0.5%",
           }}
         >
           {endAnnotation}
