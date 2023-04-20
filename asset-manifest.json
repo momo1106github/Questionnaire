@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Questionnaire/static/css/main.feb2b53e.css",
-    "main.js": "/Questionnaire/static/js/main.f3868abc.js",
+    "main.js": "/Questionnaire/static/js/main.ade9a6c3.js",
     "index.html": "/Questionnaire/index.html",
     "main.feb2b53e.css.map": "/Questionnaire/static/css/main.feb2b53e.css.map",
-    "main.f3868abc.js.map": "/Questionnaire/static/js/main.f3868abc.js.map"
+    "main.ade9a6c3.js.map": "/Questionnaire/static/js/main.ade9a6c3.js.map"
   },
   "entrypoints": [
     "static/css/main.feb2b53e.css",
-    "static/js/main.f3868abc.js"
+    "static/js/main.ade9a6c3.js"
   ]
 }
